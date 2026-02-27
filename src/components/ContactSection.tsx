@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
@@ -12,7 +12,7 @@ const ContactSection = () => {
     const msg = encodeURIComponent(
       `Olá! Meu nome é ${form.nome}. Telefone: ${form.telefone}. ${form.empresa ? `Empresa: ${form.empresa}. ` : ""}${form.mensagem}`
     );
-    window.open(`https://wa.me/5500000000000?text=${msg}`, "_blank");
+    window.open(`https://wa.me/5511931496563?text=${msg}`, "_blank");
     toast({ title: "Redirecionando para o WhatsApp...", description: "Você será atendido em breve." });
   };
 
@@ -34,7 +34,7 @@ const ContactSection = () => {
           </h2>
           <div className="w-16 h-0.5 bg-gold mx-auto mb-6" />
           <p className="font-body text-muted-foreground max-w-xl mx-auto">
-            O tempo aproximado da entrevista é de 40 minutos. Entre em contato e
+            A entrevista dura aproximadamente 40 minutos. Entre em contato e
             receba orientação jurídica especializada.
           </p>
         </motion.div>
@@ -54,10 +54,11 @@ const ContactSection = () => {
               </h3>
               <div className="space-y-5">
                 {[
-                  { icon: Phone, label: "Telefone", value: "(00) 0000-0000" },
+                  { icon: Phone, label: "Telefone", value: "(11) 3871-5386" },
+                  { icon: Phone, label: "WhatsApp", value: "(11) 93149-6563" },
                   { icon: Mail, label: "E-mail", value: "contato@albertosantosadvogados.com.br" },
-                  { icon: MapPin, label: "Endereço", value: "Endereço do escritório" },
-                  { icon: Clock, label: "Horário", value: "Seg - Sex: 9h às 18h" },
+                  { icon: MapPin, label: "Endereço", value: "Rua Guaicurus, 1133 – Água Branca, CEP 05033-002, São Paulo – SP" },
+                  { icon: Clock, label: "Horário", value: "Seg – Sex: 9h às 18h" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
@@ -69,6 +70,26 @@ const ContactSection = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Documents hint */}
+            <div className="bg-card border border-border rounded-lg p-6">
+              <div className="flex items-start gap-3">
+                <FileText className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-heading text-sm font-semibold text-foreground mb-2">
+                    Documentos para a Entrevista
+                  </h4>
+                  <p className="text-xs text-muted-foreground font-body leading-relaxed">
+                    Não são obrigatórios, mas podem ser levados no dia:
+                  </p>
+                  <ul className="text-xs text-muted-foreground font-body mt-2 space-y-1">
+                    <li>• TRCT (Termo de Rescisão do Contrato de Trabalho)</li>
+                    <li>• RG e CPF ou CNH</li>
+                    <li>• CTPS (Carteira Profissional)</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </motion.div>
