@@ -6,6 +6,7 @@ const navItems = [
   { label: "Início", href: "#inicio" },
   { label: "Escritório", href: "#escritorio" },
   { label: "Áreas de Atuação", href: "#areas" },
+  { label: "Equipe", href: "#equipe" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -24,7 +25,6 @@ const Header = () => {
           </span>
         </a>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
@@ -36,7 +36,9 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="#contato"
+            href="https://wa.me/5511931496563"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-4 inline-flex items-center gap-2 bg-gold text-accent-foreground px-5 py-2.5 text-sm font-semibold rounded tracking-wide hover:bg-gold-dark transition-colors duration-300"
           >
             <Phone className="w-4 h-4" />
@@ -44,7 +46,6 @@ const Header = () => {
           </a>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-primary-foreground"
@@ -74,7 +75,9 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="#contato"
+                href="https://wa.me/5511931496563"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-gold text-accent-foreground px-5 py-2.5 text-sm font-semibold rounded tracking-wide"
               >

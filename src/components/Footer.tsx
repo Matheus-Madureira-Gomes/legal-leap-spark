@@ -18,19 +18,31 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-8 text-sm font-body">
-            {["Início", "Escritório", "Áreas", "Contato"].map((item) => (
+            {[
+              { label: "Início", href: "#inicio" },
+              { label: "Escritório", href: "#escritorio" },
+              { label: "Áreas", href: "#areas" },
+              { label: "Equipe", href: "#equipe" },
+              { label: "Contato", href: "#contato" },
+            ].map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
+                key={item.label}
+                href={item.href}
                 className="text-primary-foreground/60 hover:text-gold transition-colors"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
         </div>
 
         <div className="mt-8 pt-6 border-t border-gold/10 text-center">
+          <p className="text-xs font-body text-primary-foreground/50 mb-1">
+            Rua Guaicurus, 1133 – Água Branca – CEP 05033-002 – São Paulo – SP
+          </p>
+          <p className="text-xs font-body text-primary-foreground/50 mb-3">
+            Tel: (11) 3871-5386 | WhatsApp: (11) 93149-6563
+          </p>
           <p className="text-sm font-body text-primary-foreground/40">
             © {new Date().getFullYear()} Alberto Santos Advogados Associados. Todos os direitos reservados.
           </p>
