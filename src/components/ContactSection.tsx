@@ -155,6 +155,16 @@ const ContactSection = () => {
                   placeholder="Descreva brevemente seu caso"
                 />
               </div>
+              <label className="flex items-start gap-2 text-xs text-muted-foreground font-body">
+                <input type="checkbox" required className="mt-1 accent-gold" />
+                <span>
+                  Concordo com a{" "}
+                  <a href="/privacidade" className="text-gold hover:underline">
+                    Política de Privacidade
+                  </a>{" "}
+                  e autorizo o tratamento dos meus dados conforme a LGPD.
+                </span>
+              </label>
               <button
                 type="submit"
                 className="w-full inline-flex items-center justify-center gap-2 bg-gold text-accent-foreground px-6 py-3.5 font-semibold rounded hover:bg-gold-dark transition-colors duration-300 tracking-wide"

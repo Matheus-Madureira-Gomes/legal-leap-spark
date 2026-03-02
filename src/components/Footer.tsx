@@ -43,9 +43,15 @@ const Footer = () => {
           <p className="text-xs font-body text-primary-foreground/50 mb-3">
             Tel: (11) 3871-5386 | WhatsApp: (11) 93149-6563
           </p>
-          <p className="text-sm font-body text-primary-foreground/40">
+          <p className="text-sm font-body text-primary-foreground/40 mb-2">
             © {new Date().getFullYear()} Alberto Santos Advogados Associados. Todos os direitos reservados.
           </p>
+          <a
+            href="/privacidade"
+            className="text-xs font-body text-primary-foreground/30 hover:text-gold transition-colors"
+          >
+            Política de Privacidade
+          </a>
         </div>
       </div>
     </footer>
