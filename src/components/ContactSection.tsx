@@ -9,11 +9,12 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = encodeURIComponent(
-      `Olá! Meu nome é ${form.nome}. Telefone: ${form.telefone}. ${form.empresa ? `Empresa: ${form.empresa}. ` : ""}${form.mensagem}`
+    const subject = encodeURIComponent("Novo contato pelo site – Alberto Santos Advogados");
+    const body = encodeURIComponent(
+      `Nome: ${form.nome}\nTelefone: ${form.telefone}\n${form.empresa ? `Empresa / Data de demissão: ${form.empresa}\n` : ""}${form.mensagem ? `Mensagem: ${form.mensagem}` : ""}`
     );
-    window.open(`https://wa.me/5511931496563?text=${msg}`, "_blank");
-    toast({ title: "Redirecionando para o WhatsApp...", description: "Você será atendido em breve." });
+    window.location.href = `mailto:contato@albertosantosadvogados.com.br?subject=${subject}&body=${body}`;
+    toast({ title: "Abrindo seu cliente de e-mail...", description: "Envie a mensagem para concluir o contato." });
   };
 
   return (
